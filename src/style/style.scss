@@ -1,0 +1,275 @@
+@import "font.scss";
+$main-color: #F19D2F;
+$text-color: #2C2B31;
+$header-bg: #FFD1AC;
+$addition-color: #37D997;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'gothampro', Sans-serif;
+}
+.header{
+  background: $header-bg;
+  text-align: center;
+  color: #2C2B31;
+  &-titer{
+    text-align: center;
+    font-size: 0.79338rem;
+    text-transform: uppercase;
+    background: $main-color;
+    padding: 0.88rem 0.69rem;
+    position: relative;
+    margin-bottom: 1.19rem;
+    font-weight: 500;
+    &::before,&::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background: url("../src/icons/za.png") center/100% no-repeat;
+      width: 0.79338rem;
+      height: 0.79338rem;
+    }
+    &::before{
+      left: 5%;
+    }
+    &::after{
+      right: 2%;
+    }
+  }
+  &-logo{
+    display: block;
+    margin-bottom: 1.19rem;
+    position: relative;
+  }
+  &-banner {
+    background: url(../src/image/bg-banner.png) 54% 63%/145% no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 17.5rem;
+    color: #fff;
+    padding: 0.88rem 0.81rem;
+    &-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5625rem 0.44381rem;
+      gap: 0.634rem;
+      border-radius: 0.44381rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      height: 3.625rem;
+    }
+    &-offer {
+      background: $main-color;
+      min-width: 6.8rem;
+      .offer-title {
+        font-size: 0.66244rem;
+      }
+      .offer-time{
+        font-size: 1.32838rem;
+      }
+    }
+    &-price{
+      padding: 0.4055rem 0.43869rem 0.35481rem 0.43869rem;
+      background: $addition-color;
+      gap: 0.50694rem;
+      .old-price{
+        position: relative;
+        font-size: 1.12981rem;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 5.5625rem;
+          height: 0.21963rem;
+          background: #E27500;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+      .new-price{
+        font-size: 1.39381rem;
+      }
+    }
+  }
+}
+.product{
+  padding: 0.69rem 1rem;
+  background: #F0F0F0;
+  &-trust{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.25rem;
+    &_rate{
+      font-size: 0.75419rem;
+      color: $text-color;
+    }
+    &_logo{
+      width: 4.5rem;
+    }
+    &_link{
+      color: $addition-color;
+      font-size: 0.75419rem;
+    }
+  }
+  &-card{
+    margin-bottom: 1.25rem;
+  }
+  &-title{
+    margin-bottom: 1.25rem;
+    color: $text-color;
+    font-size: 1.198rem;
+    text-transform: uppercase;
+  }
+  &-slider{
+    &-cards{
+      min-width: 22.375rem;
+      min-height: 14.5rem;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    &-container{
+      width: 400%;
+      transform: translateX(0);
+      transition: transform .3s;
+      display: flex;
+    }
+    &-card{
+      width: 100%;
+
+      img{
+        border-radius: 1.25rem;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-items{
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      .active{
+        opacity: 0.4;
+      }
+    }
+    &-item{
+      transition: opacity 0.3s;
+      min-width: 5rem;
+      min-height: 4.125rem;
+      img{
+        border-radius: 0.63rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &-info{
+    font-size: 0.95563rem;
+    margin-bottom: 0.75rem;
+    width: fit-content;
+    position: relative;
+    &_type{
+      font-weight: 700;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -1.5rem;
+      transform: translate(-50%,-50%);
+      background: url("../src/icons/za.png") center/100% no-repeat;
+      width: 0.79338rem;
+      height: 0.79338rem;
+    }
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  &-rate{
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.62rem;
+    &_text{
+      color: $text-color;
+      font-size: 0.95563rem;
+    }
+    &_container{
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+    &_container[data-total-value='1'] &_item:nth-child(n+5),
+    &_container[data-total-value='2'] &_item:nth-child(n+4),
+    &_container[data-total-value='3'] &_item:nth-child(n+3),
+    &_container[data-total-value='4'] &_item:nth-child(n+2),
+    &_container[data-total-value='5'] &_item:nth-child(n+1){
+      color:#F8B656;
+    }
+    &_item{
+      color: #dcdcdc;
+      cursor: pointer;
+      font-size: 1.35rem;
+      transition: color 0.2s;
+      &:hover, &:hover ~ & {
+        color: #6a6a6a;
+      }
+    }
+  }
+  &-form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    &-chose{
+      min-width: 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      gap: 0.25rem;
+      font-size: 0.625rem;
+      color: $text-color;
+    }
+    &-select{
+      width: 100%;
+      height: 3.125rem;
+      border-radius: 0.94rem;
+      text-align: center;
+      color: $text-color;
+      font-weight: 700;
+      font-size: 1.35563rem;
+      text-transform: uppercase;
+      outline: none;
+      border: none;
+      background:  url("../src/icons/arrow.svg") 90%/1.1rem no-repeat, #fff;
+      appearance: none;
+      option{
+        font-size: 0.75rem;
+        font-weight: 400;
+      }
+    }
+    &-submit{
+      flex-grow: 1;
+      border-radius: 0.94rem;
+      background: $addition-color;
+      outline: none;
+      border: none;
+      color: #FFF;
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      padding: 0.64rem;
+      font-weight: 500;
+    }
+  }
+}
+
+
